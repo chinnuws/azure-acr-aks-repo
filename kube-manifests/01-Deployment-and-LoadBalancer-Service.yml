@@ -17,8 +17,11 @@ spec:
       containers:
         - name: app1-nginx
           image: acrforuse.azurecr.io/app1/acr-nginx:v1
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
+      imagePullSecrets:
+        - name: acrdemo2ss-secret      
 ---
 apiVersion: v1
 kind: Service
